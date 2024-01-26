@@ -1,0 +1,589 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+
+:root{
+    --orange:#ffa500;
+}
+
+*{
+    font-family: 'Nunito', sans-serif;
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    text-transform: capitalize;
+    outline: none; border:none;
+    text-decoration: none;
+    transition: all .2s linear;
+}
+
+::selection{
+    background: var(--orange);
+    color: white;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 6rem;
+    scroll-behavior: smooth;
+}
+
+section{
+    padding: 2rem 9%;
+}
+
+.btn{
+    display: inline-block;
+    margin-top: 1rem;
+    background: var(--orange);
+    color: white;
+    padding: .8rem 3rem;
+    border: .2rem solid var(--orange);
+    cursor: pointer;
+    font-size: 1.7rem;
+}
+
+.btn:hover{
+    background: rgba(255,165,0,.2);
+    color: var(--orange);
+}
+
+header{
+    position: fixed;
+    top:0; left: 0; right: 0;
+    background: #333;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 9%;
+}
+
+header .logo{
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: rgb(82, 246, 96);
+}
+
+header .logo span{
+    color:var(--orange);
+}
+
+header .navbar a{
+    color: white;
+    font-size: 2rem;
+    margin: 0 .8rem;
+
+}
+
+header .navbar a:hover{
+    color:var(--orange);
+}
+
+header .icons i{
+    font-size: 2.5rem;
+    color: white;
+    cursor: pointer;
+    margin-right: 2rem;
+}
+
+header .icons i:hover{
+    color: var(--orange);
+}
+
+header .search-bar-container{
+    position: absolute;
+    top:100%; left: 0; right: 0;
+    padding: 1.5rem 2rem;
+    background: #333;
+    border-top: .1rem solid rgba(255, 255, 255, .2);
+    display: flex;
+    align-items: center;
+    z-index: 1001;
+    clip-path: polygon(0 0, 100% 0, 0 0);
+}
+header .search-bar-container.active{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+header .search-bar-container #search-bar{
+    width: 100%;
+    padding: 1rem;
+    text-transform: none;
+    color: #333;
+    font-size: 1.7rem;
+    border-radius: .5rem;
+}
+
+header .search-bar-container label{
+    color: white;
+    cursor: pointer;
+    font-size: 3rem;
+    margin-left: 1.5rem;
+}
+
+header .search-bar-container label:hover{
+    color: var(--orange);
+}
+
+.login-form-container{
+    position: fixed;
+    top: -120%; left: 0;
+    z-index: 10000;
+    min-height: 100vh;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-form-container.active{
+    top: 0;
+}
+
+.login-form-container form{
+margin: 2rem;
+padding: 1.5rem 2rem;
+border-radius: .5rem;
+background:white ;
+width: 50rem;
+}
+
+.login-form-container form h3{
+    font-size: 3rem;
+    color: rgb(60, 58, 62);
+    text-transform: uppercase;
+    text-align: center;
+    padding:1rem 0;
+}
+
+.login-form-container form .box{
+    width: 100%;
+    padding:1rem;
+    font-size: 1.7rem;
+    color: #333;
+    margin: .6rem 0;
+    border:.1rem solid rgba(0,0,0,.3);
+    text-transform: none;
+}
+
+.login-form-container form .box:focus{
+    border-color: var(--orange);
+}
+
+.login-form-container form #remember{
+    margin:2rem 0;
+}
+
+.login-form-container form label{
+    font-size: 1.5rem;
+}
+
+.login-form-container form .btn{
+    display: block;
+    width: 100%;
+}
+
+.login-form-container form p{
+    padding: .5rem 0;
+    font-size: 1.5rem;
+    color: #666;
+}
+
+.login-form-container form p a{
+    color:var(--orange);
+}
+
+.login-form-container form p a:hover{
+    color:#333;
+    text-decoration: underline;
+}
+
+.login-form-container #form-close{
+    position: absolute;
+    top: 2rem; right: 3rem;
+    font-size: 5rem;
+    color: white;
+    cursor: pointer;
+}
+
+#menu-bar{
+    color: white;
+    border:.1rem solid white;
+    border-radius: .5rem;
+    font-size: 3rem;
+    padding: .5rem 1.2rem;
+    cursor: pointer;
+    display: none;
+}
+
+.home{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    position: relative;
+    z-index: 0;
+}
+
+.home .content{
+    text-align: center;
+}
+
+.home .content h3{
+    font-size: 4.5rem;
+    color: rgb(53, 3, 47);
+    text-transform: uppercase;
+    text-shadow: 0 .3rem .5rem rgba(0, 0, 0, 0.1);
+}
+
+.home .content p{
+    font-size: 2.5rem;
+    color: rgb(231, 230, 229);
+    padding: .5rem 0;
+}
+
+.home .video-container video{
+    position: absolute;
+    top: 0; left: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+
+
+@media (max-width:1200px){
+
+    html{
+        font-size: 55%;
+    }
+
+}
+
+@media (max-width:991px){
+    
+    header{
+        padding: 2rem;
+    }
+    
+    section{
+        padding: 2rem;
+    }
+    
+}
+
+@media (max-width:768px){
+    
+    #menu-bar{
+        display: initial;
+    }
+    
+    header .navbar{
+        position: absolute;
+        top: 100%; right:0; left: 0;
+        background: #333;
+        border-top: .1rem solid rgba(255, 255, 255, .2);
+        padding: 1rem 2rem;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+    
+    header .navbar.active{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+ }
+ 
+  header .navbar a{
+      display: block;
+    border-radius: .5rem;
+    padding:1.5rem;
+    margin: 1.5rem 0;
+    background:#222;
+}
+}
+
+@media (max-width:450px){
+    html{
+        font-size: 50%;
+    }
+
+    .heading span{
+        font-size: 2.5rem;
+    }
+}
+
+
+
+/* packages section */
+
+.homepage {
+    text-align: center;
+    padding: 30px;
+    color: rgb(0, 0, 0);
+}
+.homepage h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: rgb(0, 0, 0);
+}
+.homepage p {
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+}
+.packages {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 30px;
+    color: rgb(0, 0, 0);
+}
+.package {
+    max-width: 320px;
+    margin: 25px;
+    border: 3px solid rgb(0, 0, 0);
+    padding: 15px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 15px;
+}
+
+.package img {
+    max-width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+button{
+    display: inline-block;
+    margin-top: 1rem;
+    background: var(--orange);
+    color: white;
+    padding: .3rem 1rem;
+    border: .2rem solid var(--orange);
+    cursor: pointer;
+    font-size: 1.5rem;
+    border-radius: 17%;
+}
+
+button:hover{
+    background: rgb(241, 231, 37);
+    color: var(--orange);
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+.heading{
+    text-align: center;
+    padding: 2.5rem 0;
+}
+
+.heading span{
+    font-size: 3.5rem;
+    background:rgba(255,165,0,.2);
+    color: var(--orange);
+    border-radius: .5rem;
+    padding: .2rem 1rem;
+    display: inline block;
+}
+
+.heading span.space{
+    background: none;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    
+}
+.medium-column {
+    column-count: 3;
+    column-gap: 30px;
+}
+.person {
+    margin-bottom: 20px;
+    break-inside: avoid; 
+}
+.person img {
+    max-width: 100%;
+    border-radius: 20%;
+}
+.person h2 {
+    margin-top: 10px;
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+}
+.h2{
+    color: rgb(0, 0, 0);
+}
+.person  {
+    font-size: 15px;
+    border: 2px solid;
+    border-radius: 15px;
+
+    padding: 20px;
+    
+}
+.i {
+    float: right;
+}
+
+
+
+
+/* service section */
+
+
+
+.tour-card {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 13px;
+
+  }
+
+  .tour-gallery {
+    display: flex;
+    overflow: hidden;
+  }
+
+  .tour-gallery img {
+    width: calc(100% / 3);
+    border-radius: 10px 10px 0 0;
+    object-fit: cover;
+  }
+
+  .tour-card-content {
+    padding: 20px;
+  }
+
+  .tour-card h2 {
+    margin-top: 0;
+  }
+
+  .tour-card h3 {
+    margin-bottom: 10px;
+  }
+
+  .tour-card ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .tour-card ul li {
+    margin-bottom: 8px;
+  }
+
+  .tour-card p {
+    margin-bottom: 20px;
+  }
+
+  .tour-card strong {
+    font-weight: bold;
+  }
+
+  .tour-card-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #f24e4e;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+
+  .tour-card-button:hover {
+    background-color: #8a2b2b;
+  }
+
+
+/* contact section */
+
+.contact form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(120, 119, 200, 0.1);
+    font-size: 20px;
+  }
+
+ .contact  label {
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .contact input,
+  textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  .contact input[type="submit"] {
+    background-color: #f93f3f;
+    color: white;
+    cursor: pointer;
+  }
+
+  .contact input[type="submit"]:hover {
+    background-color: #a21f1f;
+  }
+
+
+/* book section */
+.book .row{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+}
+
+.book .row .image{
+    flex: 1 1 40rem;
+}
+
+.book .row .image img{
+    width: 100%;
+}
+
+.book .row form{
+    flex: 1 1 40rem;
+    padding: 5rem;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+    border-radius: .5rem;
+}
+
+.book .row form .inputBox{
+    padding: rem 0;
+}
+
+.book .row form .inputBox input{
+    width: 100%;
+    padding: 1rem;
+    border: .1rem solid rgba(0, 0, 0, 0.1);
+    font-size: 1.7rem;
+    color:#333;
+    text-transform: none;
+}
+.book .row form .inputBox h3{
+    font-size: 2rem;
+    padding: 1rem 0;
+    color: #666;
+}
+footer {
+    background-color: rgb(82, 86, 79);
+    color: rgb(233, 178, 26);
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+    font-size: 15px;
+}
