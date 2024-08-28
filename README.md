@@ -1,2 +1,2 @@
-# SubhYatra
+# Subh Yatra
 Tours And Travels
